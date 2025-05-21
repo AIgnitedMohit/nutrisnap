@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { OverallNutritionResponse } from './types';
 import { analyzeImageAndGetNutrition } from './services/geminiService';
@@ -7,6 +6,7 @@ import NutritionDisplay from './components/NutritionDisplay';
 import NutritionChart from './components/NutritionChart';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorDisplay from './components/ErrorDisplay';
+import UserProfile from './components/UserProfile';
 import { CameraIcon, SparklesIcon, LightBulbIcon } from './components/Icons'; // Using HeroIcons style
 
 const App: React.FC = () => {
@@ -80,14 +80,17 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-slate-100 p-4 md:p-8 flex flex-col items-center">
-      <header className="w-full max-w-5xl mb-8 text-center">
-        <div className="flex items-center justify-center space-x-3 mb-2">
+      <header className="w-full max-w-5xl mb-8 flex justify-between items-center">
+        <div className="flex items-center space-x-3">
           <LightBulbIcon className="h-12 w-12 text-yellow-400" />
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-teal-400 to-sky-400">
-            NutriSnap AI
-          </h1>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-teal-400 to-sky-400">
+              NutriSnap AI
+            </h1>
+            <p className="text-slate-300 text-lg">Upload a food image and get instant nutritional insights!</p>
+          </div>
         </div>
-        <p className="text-slate-300 text-lg">Upload a food image and get instant nutritional insights!</p>
+        <UserProfile />
       </header>
 
       <main className="w-full max-w-5xl bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl p-6 md:p-8">
