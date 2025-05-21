@@ -1,0 +1,6 @@
+
+{
+  "name": "NutriSnap - Image to Nutrition Calculator",
+  "description": "Upload an image of your meal, and NutriSnap will identify food items and estimate their nutritional content, displayed both textually and graphically. This app uses the Gemini API for analysis.",
+  "requestFramePermissions": []
+}
